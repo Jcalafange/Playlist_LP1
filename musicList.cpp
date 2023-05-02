@@ -1,4 +1,5 @@
 #include "music.hpp"
+#include "MusicList.hpp"
 
 using namespace std;
 void MusicList::AddMusic(music *obj)
@@ -56,16 +57,4 @@ void MusicList::ShowElements()
         cout << v->value->GetTitle() << endl;
         v = v->next;
     }
-}
-
-int main()
-{
-    music *obj1 = new music("Hello", "Adele");
-    music *obj2 = new music("Vai se fuder no inferno", "meu pau");
-
-    MusicList V;
-    V.AddMusic(obj1);
-    V.AddMusic(obj2);
-    V.RemoveMusic(1);
-    V.ShowElements();
 }

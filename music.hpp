@@ -1,69 +1,75 @@
+/**
+ * @file music.hpp
+ * @brief Classe que representa uma música
+ */
+
 #ifndef MUSIC_HPP
 #define MUSIC_HPP
+
 #include <iostream>
 #include <string>
 
-using namespace std;
+/**
+ * @brief Classe que representa uma música
+ */
+class music {
+  private:
+    std::string title; /**< Título da música */
+    std::string author; /**< Autor da música */
 
-class music
-{
-    string title;
-    string author;
+  public:
+    /**
+     * @brief Construtor padrão da classe
+     */
+    music() {}
 
-public:
-    music(string title, string author)
-    {
+    /**
+     * @brief Construtor da classe
+     * @param title Título da música
+     * @param author Autor da música
+     */
+    music(std::string title, std::string author) {
         this->title = title;
         this->author = author;
     }
-    ~music()
-    {
-    }
-    string GetTitle()
-    {
-        return title;
-    }
-    string Getauthor()
-    {
-        return author;
-    }
-    void SetTitle(string x)
-    {
-        title = x;
-    }
-    void SetAuthor(string y)
-    {
-        author = y;
-    }
-};
 
-class MusicList
-{
-    struct Node
-    {
-        music *value;
-        Node *next;
-    };
-    Node *first;
+    /**
+     * @brief Destrutor da classe
+     */
+    ~music() {}
 
-public:
-    MusicList()
-    {
-        first = nullptr;
+    /**
+     * @brief Retorna o título da música
+     * @return Título da música
+     */
+    std::string GetTitle() { return title; }
+
+    /**
+     * @brief Retorna o autor da música
+     * @return Autor da música
+     */
+    std::string Getauthor() { return author; }
+
+    /**
+     * @brief Define o título da música
+     * @param x Título da música
+     */
+    void SetTitle(std::string x) { title = x; }
+
+    /**
+     * @brief Define o autor da música
+     * @param y Autor da música
+     */
+    void SetAuthor(std::string y) { author = y; }
+
+    /**
+     * @brief Sobrecarga do operador de igualdade
+     * @param m1 Música a ser comparada
+     * @return True se as músicas forem iguais, False caso contrário
+     */
+    bool operator==(music m1) {
+        return m1.Getauthor() == this->author && m1.GetTitle() == this->title;
     }
-    ~MusicList()
-    {
-        Node *now = first;
-        while (now != nullptr)
-        {
-            Node *next = now->next;
-            delete now;
-            now = next;
-        }
-    }
-    void AddMusic(music *obj);
-    void RemoveMusic(int index);
-    void ShowElements();
 };
 
 #endif

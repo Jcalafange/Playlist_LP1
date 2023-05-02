@@ -1,20 +1,39 @@
+/**
+*@file LinkedlList.hpp
+*@brief Definição da classe LinkedList e a representação de uma lista generica
+*/
+
 #ifndef LINKEDLIST_HPP
 #define LINKEDLIST_HPP
 #include "music.hpp"
 #include "node.hpp"
+
 using namespace std ;
 template <typename T>
+/**
+*@brief Classe representa as funções de uma lista generica que vai manipular nós da classe node, de forma que consiga tratar qualquer tipo de variavel/objeto
+*/
 class LinkedList
 {
 
     int m_size = 0;
 
 public:
-    Node<T> *first;
+    Node<T> *first;/**< Ponteiro para o primeiro nó da lista*/
+    /**
+    *@brief Construtor padrão da classe LinkedList
+    *
+    *cria uma lista vazia, com o ponteiro first inicializado como nulo
+    */
     LinkedList()
     {
         first = nullptr;
     }
+    /**
+    *@brief Destrutor da classe LinkedList.
+    *
+    *Libera a ménoria alocada para cada nó da lista
+    */
     ~LinkedList()
     {
         Node<T> *now = first;
@@ -25,9 +44,19 @@ public:
             now = next;
         }
     }
-
+    /**
+    *@brief Retorna o tamanho da lista.
+    *
+    *@return int Tamanho da lista.
+    */
     int size() { return m_size; }
-
+    /**
+    *@brief Adciona um elemnto no inicio da lista.
+    *
+    * Cria um nó e o adciona no inicio da lista
+    *
+    *@param obj Elemento a ser adcionado na lista
+    */
     void add(T obj)
     {
         Node<T> *newNode = new Node<T>;
@@ -44,6 +73,12 @@ public:
         }
         m_size++;
     }
+    /**
+    *@brief Remove o elemento do indice especificado
+    *
+    * Remove o elemento da lista de indice especificado, e atualiza os ponteiros dos nós do lado
+    *@param index Índice do elemnto a ser removido
+    */
     void remove(int index)
     {
         if (index == 0)
@@ -75,6 +110,9 @@ public:
         m_size--;
         delete now;
     }
+    /**
+    *@brief imprime todos os elementos da lista
+    */
     void print()
     {
         cout << "Esses sao os elementos da lista: " << endl;
@@ -85,7 +123,11 @@ public:
             v = v->next;
         }
     }
-
+    /**
+    *@brief retorna o valor do nó no indice da lista
+    *@param index Índice do valor a ser retornado
+    *@return T Valor do nó
+    */
     T get(int index)
     {
         Node<T> *runner = first;

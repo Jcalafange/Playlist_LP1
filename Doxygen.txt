@@ -1,0 +1,60 @@
+=======================================
+Instalação
+=======================================
+
+
+Requisitos
+sudo apt-get install flex
+sudo apt-get install bison
+
+git clone https://github.com/doxygen/doxygen.git
+cd doxygen
+
+mkdir build
+cd build
+cmake -G "Unix Makefiles" ..
+make
+
+make install
+
+=======================================
+Execução
+=======================================
+
+Cria o arquivo de configuração
+doxygen -g
+
+Executa
+doxygen
+
+=======================================
+Modificações no arquivo de configuração
+=======================================
+
+PROJECT_NAME	     = Nome do projeto
+PROJECT_NUMBER	     = Versão
+OUTPUT_DIRECTORY       = docs/
+OUTPUT_LANGUAGE        = Brazilian
+EXTRACT_PRIVATE        = YES
+RECURSIVE              = YES
+
+=======================================
+Algumas TAGS
+=======================================
+
+int var; /*!< Detailed description after the member */
+
+int var; /**< Detailed description after the member */
+
+int var; //!< Brief description after the member
+
+/**
+ * @brief Descrição
+ */
+
+/**
+* @brief função auxiliar para fazer o programa esperar por alguns milisegundos
+* @param largura a quantidade de segundos que o programa deve esperar
+* @return The test results da largura
+*/
+

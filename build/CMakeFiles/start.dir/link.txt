@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/start.dir/src/main.cpp.o CMakeFiles/start.dir/src/playlist.cpp.o CMakeFiles/start.dir/src/sistema.cpp.o  -o start 

@@ -73,6 +73,22 @@ public:
         }
         m_size++;
     }
+    }
+        /**
+    * @brief Adiciona os elementos de uma lista ligada à lista atual.
+    *
+    * Recebe uma lista ligada por referência e adiciona todos os elementos dessa lista à lista atual.
+    *
+    * @param lista Ligada Lista ligada contendo os elementos a serem adicionados
+    */
+    void addElements(LinkedList<T>& lista) {
+        Node<T>* currentNode = lista.first;
+
+        while (currentNode != nullptr) {
+            add(currentNode->value);
+            currentNode = currentNode->next;
+        }
+    }
     /**
     *@brief Remove o elemento do indice especificado
     *

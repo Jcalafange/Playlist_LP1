@@ -19,7 +19,9 @@ struct Node
     /**
      * @brief Construtor padrão da classe
      */
-    Node() {}
+    Node() : next(nullptr) {}
+
+    Node(const T& value) : value(value), next(nullptr) {}
 };
 
 #endif

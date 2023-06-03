@@ -73,7 +73,7 @@ public:
         }
         m_size++;
     }
-    }
+
         /**
     * @brief Adiciona os elementos de uma lista ligada à lista atual.
     *
@@ -87,8 +87,94 @@ public:
         while (currentNode != nullptr) {
             add(currentNode->value);
             currentNode = currentNode->next;
+            m_size++;
         }
     }
+    /**
+    * @brief sobrecarga do operador + concatenando 2 listas ligadas.
+    *
+    * Recebe uma lista ligada por referência e adiciona todos os elementos dessa lista à lista atual.
+    *
+    * @param lista Ligada Lista ligada contendo os elementos a serem adicionados
+    */
+    LinkedList operator+(const LinkedList& lista) const {
+        LinkedList result(*this); // Cria uma cópia da lista atual
+
+        Node<T>* currentNode = lista.first;
+
+        while (currentNode != nullptr) {
+            result.add(currentNode->value); 
+            currentNode = currentNode->next;
+        }
+
+    return result; // Retorna a nova lista concatenada
+}
+    /**
+    *@brief sobrecarga do operador >>, extraindo o ultimo elemento da lista
+    *
+    *@param node nó para receber os valores do ultimo elemento
+    */
+    void operator>>(Node<T>*& node){
+        if(isEmpty()){
+            node = nullptr;
+        } else{
+            Node<T>* lastNode = nullptr;
+            Node<T>* currentNode = first;
+        
+            while (currentNode->next != nullptr){
+                lastNode = currentNode;
+                currentNode = currentNode->next;
+            }
+        
+
+        node = new Node<T>(currentNode->value);
+        delete currentNode;
+
+        if(lastNode == nullptr) {
+            first = nullptr;
+        } else {
+            lastNode->next = nullptr;
+        }
+        m_size--;
+        }
+    }
+    /**
+    *@brief insere um node no fim da lista
+    *
+    *@param node nó a ser inserido
+    *
+    */
+    void operator<<(Node<T>* node) {
+        if (node == nullptr){
+            return;// se ó nó for nullptr, a função não faz nada
+        }
+
+        if (isEmpty()) {
+            first = node;
+        } else {
+            Node<T>* lastNode = first;
+
+            while (lastNode->next != nullptr){
+                lastNode = lastNode->next;
+            }
+            lastNode->next = node; //adcionando o novo node ao final da lista
+        }
+        if (node != nullptr){
+            m_size++;// incrementando apenas se for node tiver algum valor
+
+        }
+    }
+
+
+    /**
+    *@brief versão sobrecarregada da função remove, removendo o conteudo de uma lista ligada e retornando a quantidade de musicas removidas.
+    *
+    *@param lista Lista Ligada contendo os elementos a serem apagados
+    */
+    void remove(LinkedList<T> lista) {
+        std::cout << "oi";
+        }
+
     /**
     *@brief Remove o elemento do indice especificado
     *
@@ -102,6 +188,7 @@ public:
             Node<T> *newFirst = first->next;
             delete first;
             first = newFirst;
+            return;
         }
         Node<T> *last = nullptr;
         Node<T> *now = first;
@@ -126,6 +213,7 @@ public:
         m_size--;
         delete now;
     }
+
     /**
     *@brief imprime todos os elementos da lista
     */
@@ -153,6 +241,15 @@ public:
         }
         return runner->value;
     }
+    /**
+    * @brief função isEmpty verifica se a lista esta vazia verificando o ponteiro first para o primeiro no da lista 
+    *
+    * @return true caso esteja vazia e false caso tenha algum elemento diferente de nullptr
+    */
+    bool isEmpty() const {
+    return (first == nullptr);
+}
 };
+
 
 #endif

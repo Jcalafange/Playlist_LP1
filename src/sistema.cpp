@@ -54,7 +54,7 @@ void sistema::ShowRegistredMusic()
     while (copy.first != nullptr)
     {
         cout << copy.first->value.GetTitle() << " - ";
-        cout << "by " << copy.first->value.Getauthor() << endl;
+        cout << "by " << copy.first->value.GetAuthor() << endl;
         copy.first = copy.first->next;
     }
 }

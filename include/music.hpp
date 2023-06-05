@@ -48,7 +48,7 @@ class music {
      * @brief Retorna o autor da música
      * @return Autor da música
      */
-    std::string Getauthor() { return author; }
+    std::string GetAuthor() { return author; }
 
     /**
      * @brief Define o título da música
@@ -67,9 +67,15 @@ class music {
      * @param m1 Música a ser comparada
      * @return True se as músicas forem iguais, False caso contrário
      */
-    bool operator==(music m1) {
-        return m1.Getauthor() == this->author && m1.GetTitle() == this->title;
+    bool operator==(music m1) const{
+      return m1.GetAuthor() == this->author && m1.GetTitle() == this->title;
     }
+
+    bool operator!=(const music& other) const
+    {
+      return !(*this == other);
+    }
+
 };
 
 #endif

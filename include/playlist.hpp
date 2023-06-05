@@ -31,6 +31,8 @@ public:
     playlist(const playlist &other)
     {
         this->name = other.name;
+        this->list = other.list;
+        this->now = this->list.first;
     }
 
     /**
@@ -57,14 +59,21 @@ public:
     }
 
     /**
-     * @brief Retorna o nome da playlist
-     * @return Nome da playlist
+    * @brief Retorna o nome da playlist
+    * @return Nome da playlist
+    */
+
+    /**
+     * @brief Define o nome da playlist.
+     * @param playlistName O nome da playlist.
      */
-    string GetPlaylist()
+    string GetPlaylist() const 
     {
         return name;
     }
-
+    void SetName(const std::string& playlistName) {
+        name = playlistName;
+    }
     /**
      * @brief Adiciona uma música à playlist
      * @param x Música a ser adicionada
@@ -72,10 +81,63 @@ public:
     void AddMusicPlaylist(music x);
 
     /**
+    *@brief Adciona uma playlist á outra playlist
+    *@param playlistTwo playlist a ser adcionada
+    */
+    void AddMusicPlaylist(const playlist& playlistTwo);
+
+    /**
+    *@brief sobrecarga o operdaor + para concatenar 2 playlists em 1 nova sem elementos repetidos
+    *@param playlist2 playlist a ser concatenada
+    *@return playlist concatenada
+    */
+    playlist operator+(const playlist &playlist2) const;
+
+    /**
+    *@brief sobrecarga o operador + para concatenar 1 musica a uma playlist
+    *@param m musica a ser concatenada
+    *@return o resultado da playlist com a musica concatenada
+    */
+    playlist operator+(const music& m) const;
+
+    /**
+    *@brief sobrecarga o operador - para criar uma nova lista com os elementos de uma primeira a lista menos os elementos de uma lista b
+    *@param other playlist com os elementos a serem removidos
+    *@return playlist com os elementos removidos
+    */
+    playlist operator-(const playlist& other)const;
+
+    /**
+    *@brief sobrecarga o operador - para criar uma nova lista com os elementos de uma primeira a lista menos umas musica especifica passada pelo paramentro
+    *@param m musica a ser removida da nova playlist
+    *@return playlist com o elemento removido
+    */
+    playlist operator-(const music& m) const;
+
+    /**
+     * @brief Remove a ultima música da playlist
+     * @param m Música removida
+     */
+    void operator>>(music& m);
+
+    /**
+    *@brief insere uma musica na ultima posição da playlist.
+    *@param musica a ser inserida
+    */
+    void operator<<(music& m);
+
+    /**
      * @brief Remove uma música da playlist
      * @param m Música a ser removida
      */
     void RemoveMusicPlaylist(music m);
+
+    /**
+     * @brief Remove as musicas presentes em uma playlist da playlist chamada
+     * @param playlistTwo playlist a ser removida
+     * @return numero de elementos removidos
+     */
+    int RemoveMusicPlaylist(const playlist& playlistTwo);
 
     /**
      * @brief Retorna a próxima música da playlist

@@ -44,12 +44,16 @@ public:
             now = next;
         }
     }
+    Node<T>* getFirst() const
+    {
+        return first;
+    }
     /**
     *@brief Retorna o tamanho da lista.
     *
     *@return int Tamanho da lista.
     */
-    int size() { return m_size; }
+    int size() const { return m_size; }
     /**
     *@brief Adciona um elemnto no inicio da lista.
     *
@@ -232,7 +236,7 @@ public:
     *@param index Índice do valor a ser retornado
     *@return T Valor do nó
     */
-    T get(int index)
+    T get(int index) const
     {
         Node<T> *runner = first;
         for (int i = 0; i < index; i++)
@@ -243,12 +247,26 @@ public:
     }
     /**
     * @brief função isEmpty verifica se a lista esta vazia verificando o ponteiro first para o primeiro no da lista 
-    *
     * @return true caso esteja vazia e false caso tenha algum elemento diferente de nullptr
     */
     bool isEmpty() const {
     return (first == nullptr);
 }
+    /**
+    *@brief verifica se na lista ligada se um determinado valor esta presente 
+    *@param value valor a ser verificado
+    *@return true caso o valor esteja presente e false caso não esteja
+    */
+    bool contains(const T& value) const {
+        Node<T>* currentNode = first;
+        while( currentNode != nullptr){
+            if (currentNode->value == value){
+                return true;
+            }
+            currentNode = currentNode->next;
+        }  
+        return false;
+    }
 };
 
 

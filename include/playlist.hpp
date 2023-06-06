@@ -62,18 +62,19 @@ public:
     * @brief Retorna o nome da playlist
     * @return Nome da playlist
     */
+    string GetPlaylist() const 
+    {
+        return name;
+    }
 
     /**
      * @brief Define o nome da playlist.
      * @param playlistName O nome da playlist.
      */
-    string GetPlaylist() const 
-    {
-        return name;
-    }
     void SetName(const std::string& playlistName) {
         name = playlistName;
     }
+    
     /**
      * @brief Adiciona uma música à playlist
      * @param x Música a ser adicionada
@@ -85,6 +86,10 @@ public:
     *@param playlistTwo playlist a ser adcionada
     */
     void AddMusicPlaylist(const playlist& playlistTwo);
+
+    music get(int index) const {
+        return list.get(index);
+    }
 
     /**
     *@brief sobrecarga o operdaor + para concatenar 2 playlists em 1 nova sem elementos repetidos

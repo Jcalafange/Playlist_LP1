@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = "/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Play
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/testes.dir/all
 all: CMakeFiles/start.dir/all
 
 .PHONY : all
@@ -63,9 +64,37 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/testes.dir/clean
 clean: CMakeFiles/start.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/testes.dir
+
+# All Build rule for target.
+CMakeFiles/testes.dir/all:
+	$(MAKE) -f CMakeFiles/testes.dir/build.make CMakeFiles/testes.dir/depend
+	$(MAKE) -f CMakeFiles/testes.dir/build.make CMakeFiles/testes.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/build/CMakeFiles" --progress-num=5,6,7,8 "Built target testes"
+.PHONY : CMakeFiles/testes.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/testes.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/build/CMakeFiles" 4
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/testes.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/build/CMakeFiles" 0
+.PHONY : CMakeFiles/testes.dir/rule
+
+# Convenience name for target.
+testes: CMakeFiles/testes.dir/rule
+
+.PHONY : testes
+
+# clean rule for target.
+CMakeFiles/testes.dir/clean:
+	$(MAKE) -f CMakeFiles/testes.dir/build.make CMakeFiles/testes.dir/clean
+.PHONY : CMakeFiles/testes.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/start.dir

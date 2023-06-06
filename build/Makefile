@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named testes
+
+# Build rule for target.
+testes: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testes
+.PHONY : testes
+
+# fast build rule for target.
+testes/fast:
+	$(MAKE) -f CMakeFiles/testes.dir/build.make CMakeFiles/testes.dir/build
+.PHONY : testes/fast
+
+#=============================================================================
 # Target rules for targets named start
 
 # Build rule for target.
@@ -156,6 +169,7 @@ src/playlist.o: src/playlist.cpp.o
 
 # target to build an object file
 src/playlist.cpp.o:
+	$(MAKE) -f CMakeFiles/testes.dir/build.make CMakeFiles/testes.dir/src/playlist.cpp.o
 	$(MAKE) -f CMakeFiles/start.dir/build.make CMakeFiles/start.dir/src/playlist.cpp.o
 .PHONY : src/playlist.cpp.o
 
@@ -165,6 +179,7 @@ src/playlist.i: src/playlist.cpp.i
 
 # target to preprocess a source file
 src/playlist.cpp.i:
+	$(MAKE) -f CMakeFiles/testes.dir/build.make CMakeFiles/testes.dir/src/playlist.cpp.i
 	$(MAKE) -f CMakeFiles/start.dir/build.make CMakeFiles/start.dir/src/playlist.cpp.i
 .PHONY : src/playlist.cpp.i
 
@@ -174,6 +189,7 @@ src/playlist.s: src/playlist.cpp.s
 
 # target to generate assembly for a file
 src/playlist.cpp.s:
+	$(MAKE) -f CMakeFiles/testes.dir/build.make CMakeFiles/testes.dir/src/playlist.cpp.s
 	$(MAKE) -f CMakeFiles/start.dir/build.make CMakeFiles/start.dir/src/playlist.cpp.s
 .PHONY : src/playlist.cpp.s
 
@@ -183,6 +199,7 @@ src/sistema.o: src/sistema.cpp.o
 
 # target to build an object file
 src/sistema.cpp.o:
+	$(MAKE) -f CMakeFiles/testes.dir/build.make CMakeFiles/testes.dir/src/sistema.cpp.o
 	$(MAKE) -f CMakeFiles/start.dir/build.make CMakeFiles/start.dir/src/sistema.cpp.o
 .PHONY : src/sistema.cpp.o
 
@@ -192,6 +209,7 @@ src/sistema.i: src/sistema.cpp.i
 
 # target to preprocess a source file
 src/sistema.cpp.i:
+	$(MAKE) -f CMakeFiles/testes.dir/build.make CMakeFiles/testes.dir/src/sistema.cpp.i
 	$(MAKE) -f CMakeFiles/start.dir/build.make CMakeFiles/start.dir/src/sistema.cpp.i
 .PHONY : src/sistema.cpp.i
 
@@ -201,8 +219,36 @@ src/sistema.s: src/sistema.cpp.s
 
 # target to generate assembly for a file
 src/sistema.cpp.s:
+	$(MAKE) -f CMakeFiles/testes.dir/build.make CMakeFiles/testes.dir/src/sistema.cpp.s
 	$(MAKE) -f CMakeFiles/start.dir/build.make CMakeFiles/start.dir/src/sistema.cpp.s
 .PHONY : src/sistema.cpp.s
+
+src/teste.o: src/teste.cpp.o
+
+.PHONY : src/teste.o
+
+# target to build an object file
+src/teste.cpp.o:
+	$(MAKE) -f CMakeFiles/testes.dir/build.make CMakeFiles/testes.dir/src/teste.cpp.o
+.PHONY : src/teste.cpp.o
+
+src/teste.i: src/teste.cpp.i
+
+.PHONY : src/teste.i
+
+# target to preprocess a source file
+src/teste.cpp.i:
+	$(MAKE) -f CMakeFiles/testes.dir/build.make CMakeFiles/testes.dir/src/teste.cpp.i
+.PHONY : src/teste.cpp.i
+
+src/teste.s: src/teste.cpp.s
+
+.PHONY : src/teste.s
+
+# target to generate assembly for a file
+src/teste.cpp.s:
+	$(MAKE) -f CMakeFiles/testes.dir/build.make CMakeFiles/testes.dir/src/teste.cpp.s
+.PHONY : src/teste.cpp.s
 
 # Help Target
 help:
@@ -212,6 +258,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... testes"
 	@echo "... start"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
@@ -222,6 +269,9 @@ help:
 	@echo "... src/sistema.o"
 	@echo "... src/sistema.i"
 	@echo "... src/sistema.s"
+	@echo "... src/teste.o"
+	@echo "... src/teste.i"
+	@echo "... src/teste.s"
 .PHONY : help
 
 

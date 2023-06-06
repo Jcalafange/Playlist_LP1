@@ -1,3 +1,4 @@
 /mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/build/CMakeFiles/rebuild_cache.dir
 /mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/build/CMakeFiles/testes.dir
 /mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/build/CMakeFiles/start.dir

@@ -1,0 +1,48 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/include/LinkedList.hpp
+music.hpp
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/include/music.hpp
+node.hpp
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/include/node.hpp
+
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/include/music.hpp
+iostream
+-
+string
+-
+
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/include/node.hpp
+
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/include/playlist.hpp
+music.hpp
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/include/music.hpp
+LinkedList.hpp
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/include/LinkedList.hpp
+string
+-
+
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/include/sistema.hpp
+LinkedList.hpp
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/include/LinkedList.hpp
+playlist.hpp
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/include/playlist.hpp
+node.hpp
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/include/node.hpp
+
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/src/teste.cpp
+iostream
+-
+../include/LinkedList.hpp
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/include/LinkedList.hpp
+../include/playlist.hpp
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/include/playlist.hpp
+../include/sistema.hpp
+/mnt/c/Users/jotav/Área de Trabalho/mySpace/cppSidemar/Playlist_LP1/include/sistema.hpp
+

@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/testes.dir/src/teste.cpp.o CMakeFiles/testes.dir/src/playlist.cpp.o CMakeFiles/testes.dir/src/sistema.cpp.o  -o testes 
